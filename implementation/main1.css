@@ -1,0 +1,140 @@
+*{ 
+margin:0px;
+padding:0px;
+	}
+h1{
+	font:bold 20px Tahoma;
+	text-align: center;
+	}
+h2{
+	font:bold 14px Tahoma;
+	}
+header, section, footer, aside, nav, article, hgroup{
+	display:block;
+}
+body{
+	width:100%;
+	display:-webkit-box;
+	-webkit-box-pack: center;
+}
+#big_wrapper{
+	max-width: 1000px;
+	margin: 20px 0px;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;/*排列方式*/
+	-webkit-box-flex:1;	/*"1"=flexable, "0"=unflexable*/
+	
+}
+#top_header{
+	
+	padding:20px;
+	
+}
+#top_menu{
+	border-top: 1px solid black;
+	border-bottom:  1px solid black;
+	color:black;
+}
+#top_menu li{
+	display:inline-block;/*按照行排列*/
+	list-style:none;
+	padding:5px;
+	font:bold 14px Tahoma;
+}
+#new_div{
+	display:-webkit-box;
+	-webkit-box-orient:horizontal;
+}
+#main_section{
+	border:1px solid blue;
+	-webkit-box-flex:1;
+	margin:20px;
+	padding:20px;
+} 
+#sid_news{
+	border: 1px solid red;
+	background:balck;
+	color:white;
+	width:220px;
+	margin:20px;
+	padding: 30px;
+}
+#the_footer{
+	text-align:center;
+	padding:20px;
+	border-top:2px solid green;
+}
+dt{
+	font:bold 20px Tahoma;
+}
+#carImg{
+	margin: 10px;
+	width: 20px;
+	height: 20px;
+}
+#to_special_list{
+	display:block;
+}
+#shopping_Car{
+	display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: column;
+   flex-direction: column;
+   -webkit-align-items: flex-end;
+   align-items: flex-end;
+}
+#itemImg{
+	margin: 10px;
+	width:40px;
+	height: 40px;
+}
+#nextPageButton{
+	
+ cursor: pointer;
+    font-size: 16px;
+    width: 20%;
+    border-color: transparent;
+    border-radius: 6px;
+	background: black;
+	color: white;
+	position: absolute;
+	right: 30%;
+	margin-bottom: 5px;
+	
+}
+#lastPageButton{
+	cursor: pointer;
+    font-size: 16px;
+    width: 20%;
+    border-color: transparent;
+    border-radius: 6px;
+	background: black;
+	color: white;
+	position: absolute;
+	margin-bottom: 5px;
+}
+h6{
+	
+	border-bottom:  1px solid black;
+}
+h5{
+	border-bottom: 1px solid black;
+}
+a {
+	text-decoration:none;
+}
+.sub-nav{
+	display: none;
+	position: absolute;
+	
+}
+#main-nav > li:hover [class="sub-nav"] {
+	display:block;
+}
+.sub-nav li {
+	position:relative;
+}
+=======
+
+
+

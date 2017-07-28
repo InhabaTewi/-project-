@@ -1,0 +1,179 @@
+-- Course: CS425 Project 1
+-- Description: Part 2 - SQL Translation
+-- Group 35:
+--    jzhou43@hawk.iit.edu
+--    kchatman@hawk.iit.edu
+--    dyoung9@hawk.iit.edu
+-- Instructor: Glavic
+-- Date: 11/21/2016
+
+
+-- NOTE: "Primary and unique keys automatically have indexes"
+-- according to http://docs.oracle.com/cd/B10501_01/appdev.920/a96590/adg06idx.htm
+
+
+
+-- Drop all, so we can re-run the script as many times as needed.
+DROP TABLE gsdb_address CASCADE CONSTRAINTS;
+DROP TABLE gsdb_staff CASCADE CONSTRAINTS;
+DROP TABLE gsdb_customer CASCADE CONSTRAINTS;
+DROP TABLE gsdb_product CASCADE CONSTRAINTS;
+DROP TABLE gsdb_order CASCADE CONSTRAINTS;
+DROP TABLE gsdb_order_products CASCADE CONSTRAINTS;
+DROP TABLE gsdb_warehouse CASCADE CONSTRAINTS;
+DROP TABLE gsdb_supplier CASCADE CONSTRAINTS;
+DROP TABLE gsdb_supplier_products CASCADE CONSTRAINTS;
+DROP TABLE gsdb_creditcard CASCADE CONSTRAINTS;
+DROP TABLE gsdb_nutrition_or_alcohol CASCADE CONSTRAINTS;
+DROP TABLE gsdb_state_product_prices CASCADE CONSTRAINTS;
+DROP TABLE gsdb_stock CASCADE CONSTRAINTS;
+
+
+
+-- Addresses to be stored here: Customer, Creditcard, 
+-- Order, Staff, Warehouse, Supplier
+DROP TABLE gsdb_address CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_address (
+    address_id              number,
+    addrowner_id            number,
+    street                  varchar(50),
+    city                    varchar(50),
+    state                   char(2),
+    zip                     number,
+    PRIMARY KEY             (address_id, addrowner_id)
+);
+
+
+DROP TABLE gsdb_staff CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_staff (
+    staff_id                number,
+    sname                   varchar(50),
+    password                varchar(50),
+    title                   varchar(50),
+    salary                  number,
+    PRIMARY KEY             (staff_id)
+);
+
+
+DROP TABLE gsdb_customer CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_customer (
+    customer_id             number,
+    cname                   varchar(50),
+    password                varchar(50),
+    preferred_address       number,
+    balance                 number,
+    PRIMARY KEY             (customer_id),
+    FOREIGN KEY             (customer_id, preferred_address) REFERENCES gsdb_address (addrowner_id, address_id)
+);
+CREATE INDEX idx_preferred_address ON gsdb_customer(preferred_address);
+
+
+
+DROP TABLE gsdb_creditcard CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_creditcard (
+    creditcard_id           number,
+    customer_id             number,
+    cc_num                  varchar(20),
+    cc_exp                  date,
+    cc_ccv                  number,
+    cc_name                 varchar(50),
+    PRIMARY KEY             (creditcard_id, customer_id),
+    FOREIGN KEY             (customer_id) REFERENCES gsdb_customer (customer_id)
+);
+
+
+DROP TABLE gsdb_product CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_product (
+    product_id              number,
+    pname                   varchar(50),
+    category                varchar(50), -- "Food", "Drink", "Stationary", etc
+    weight                  number,
+    price                   number,
+    description             varchar(300),
+    image                   varchar(300),
+    PRIMARY KEY             (product_id)
+);
+
+
+DROP TABLE gsdb_order CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_order (
+    order_id                number,
+    customer_id             number,
+    status                  varchar(50), -- "Open", "Paid", "Shipped", "Closed"
+    timestamp               date,
+    total                   number,
+    delivery_address        number,
+    PRIMARY KEY             (order_id, customer_id),
+    FOREIGN KEY             (customer_id) REFERENCES gsdb_customer (customer_id),
+    FOREIGN KEY             (order_id, delivery_address) REFERENCES gsdb_address (addrowner_id, address_id)
+);
+
+
+DROP TABLE gsdb_orderproducts CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_orderproducts (
+    order_id                number,
+    product_id              number,
+    quantity                number,
+    PRIMARY KEY             (order_id, product_id),
+--    FOREIGN KEY             (order_id) REFERENCES gsdb_order (order_id),
+    FOREIGN KEY             (product_id) REFERENCES gsdb_product (product_id)
+);
+
+
+DROP TABLE gsdb_warehouse CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_warehouse (
+    warehouse_id            number,
+    capacity                number,
+    wname                   varchar(50),
+    PRIMARY KEY             (warehouse_id)
+);
+
+
+DROP TABLE gsdb_stock CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_stock (
+    product_id              number,
+    warehouse_id            number,
+    quantity                number,
+    PRIMARY KEY             (product_id, warehouse_id),
+    FOREIGN KEY             (product_id) REFERENCES gsdb_product (product_id),
+    FOREIGN KEY             (warehouse_id) REFERENCES gsdb_warehouse (warehouse_id)
+);
+
+
+DROP TABLE gsdb_supplier CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_supplier (
+    supplier_id             number,
+    suppname                varchar(50),
+    PRIMARY KEY             (supplier_id)
+);
+
+
+DROP TABLE gsdb_supplier_products CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_supplier_products (
+    supplier_id             number,
+    product_id              number,
+    price                   number,
+    PRIMARY KEY             (supplier_id, product_id),
+    FOREIGN KEY             (supplier_id) REFERENCES gsdb_supplier (supplier_id),
+    FOREIGN KEY             (product_id) REFERENCES gsdb_product (product_id)
+);
+
+
+DROP TABLE gsdb_state_product_prices CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_state_product_prices (
+    product_id              number,
+    state                   char(2),
+    price                   number,
+    PRIMARY KEY             (product_id, state),
+    FOREIGN KEY             (product_id) REFERENCES gsdb_product (product_id)
+);
+
+
+DROP TABLE gsdb_nutrition_or_alcohol CASCADE CONSTRAINTS;
+CREATE TABLE gsdb_nutrition_or_alcohol (
+    product_id              number,
+    type                    varchar(50), -- "Grocery", "Alcohol", etc
+    info                    varchar(50),
+    PRIMARY KEY             (product_id)
+);
+

@@ -1,0 +1,491 @@
+11-12-16 23:21:05 Log started
+11-12-16 23:21:05 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 3
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:21:05 Log closing
+11-12-16 23:21:07 Log started
+11-12-16 23:21:07 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 3
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:21:07 Log closing
+11-12-16 23:21:12 Log started
+11-12-16 23:21:12 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 3
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:21:12 3, 2, 1
+11-12-16 23:21:12 INSERT INTO gsdb_orderproducts (order_id, product_id, quantity) VALUES (3, 2, 1)
+11-12-16 23:21:12 Log closing
+11-12-16 23:21:17 Log started
+11-12-16 23:21:17 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 3
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:21:17 Log closing
+11-12-16 23:21:20 Log started
+11-12-16 23:21:20 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 3
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:21:20 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 3
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:21:20 Log closing
+11-12-16 23:21:22 Log started
+11-12-16 23:21:22 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 3
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:21:22 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 3
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:21:22 Log closing
+11-12-16 23:21:25 Log started
+11-12-16 23:21:25 Statement error: Array
+(
+    [code] => 936
+    [message] => ORA-00936: missing expression
+    [offset] => 69
+    [sqltext] => UPDATE gsdb_customer SET balance = balance + 1.2 WHERE customer_id = 
+)
+
+11-12-16 23:21:25 Log closing
+11-12-16 23:21:30 Log started
+11-12-16 23:21:30 Log closing
+11-12-16 23:21:57 Log started
+11-12-16 23:21:57 Log closing
+11-12-16 23:22:00 Log started
+11-12-16 23:22:00 Creating new order ... 
+11-12-16 23:22:00 4, 2, 2
+11-12-16 23:22:00 INSERT INTO gsdb_orderproducts (order_id, product_id, quantity) VALUES (4, 2, 2)
+11-12-16 23:22:00 Log closing
+11-12-16 23:22:05 Log started
+11-12-16 23:22:05 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 4
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:22:05 Log closing
+11-12-16 23:22:07 Log started
+11-12-16 23:22:07 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 4
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:22:07 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 4
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:22:07 Log closing
+11-12-16 23:22:09 Log started
+11-12-16 23:22:09 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 4
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:22:09 getCart: Array
+(
+    [ORDER_ID] => Array
+        (
+            [0] => 4
+        )
+
+    [CUSTOMER_ID] => Array
+        (
+            [0] => 2
+        )
+
+    [STATUS] => Array
+        (
+            [0] => open
+        )
+
+    [TIMESTAMP] => Array
+        (
+            [0] => 11-DEC-16
+        )
+
+    [TOTAL] => Array
+        (
+            [0] => 0
+        )
+
+    [DELIVERY_ADDRESS] => Array
+        (
+            [0] => 
+        )
+
+)
+
+11-12-16 23:22:09 Log closing
+11-12-16 23:22:21 Log started
+11-12-16 23:22:21 Log closing
+11-12-16 23:22:27 Log started
+11-12-16 23:22:27 Log closing
+11-12-16 23:22:30 Log started
+11-12-16 23:22:30 Log closing
+11-12-16 23:22:35 Log started
+11-12-16 23:22:35 Log closing
+11-12-16 23:22:40 Log started
+11-12-16 23:22:40 Log closing
